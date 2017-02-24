@@ -31,7 +31,7 @@
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="rollTheDice" destination="vXZ-lx-hvc" eventType="touchUpInside" id="R32-GL-24x"/>
+                                    <segue destination="qUR-90-axl" kind="modal" identifier="rollDice" id="rJH-2J-80F"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -102,6 +102,7 @@
                             <outletCollection property="gestureRecognizers" destination="o8S-Co-8tn" appends="YES" id="qTe-qd-igR"/>
                         </connections>
                     </view>
+                    <navigationItem key="navigationItem" id="CBQ-2x-MjG"/>
                     <connections>
                         <outlet property="firstDie" destination="r8F-NY-C0r" id="3Xg-2o-Wy0"/>
                         <outlet property="secondDie" destination="auL-3f-b4I" id="W6j-4U-Y2F"/>
@@ -110,7 +111,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ckr-Co-O4G" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="o8S-Co-8tn"/>
             </objects>
-            <point key="canvasLocation" x="672" y="879"/>
+            <point key="canvasLocation" x="734" y="879"/>
         </scene>
     </scenes>
     <resources>

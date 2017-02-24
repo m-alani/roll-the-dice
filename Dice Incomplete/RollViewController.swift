@@ -5,6 +5,8 @@
 //  Created by Jason Schatz on 11/6/14.
 //  Copyright (c) 2014 Udacity. All rights reserved.
 //
+//  Added to by Marwan Alani - 2017
+//
 
 import UIKit
 
@@ -25,13 +27,22 @@ class RollViewController: UIViewController {
         return Int(randomValue)
     }
 
+    // Using both code & storyboard to present a new View
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let nextController = segue.destination as! DiceViewController
+        nextController.firstValue = self.randomDiceValue()
+        nextController.secondValue = self.randomDiceValue()
+    }
     // MARK: Actions
     
     @IBAction func rollTheDice() {
-        let controller = self.storyboard?.instantiateViewController(withIdentifier: "DiceViewController") as! DiceViewController
-        controller.firstValue = self.randomDiceValue()
-        controller.secondValue = self.randomDiceValue()
-        self.present(controller, animated: true, completion: nil)
+        performSegue(withIdentifier: "rollDice", sender: self)
+        
+        // ***** Programmatically Created ViewController *****
+//        let controller = self.storyboard?.instantiateViewController(withIdentifier: "DiceViewController") as! DiceViewController
+//        controller.firstValue = self.randomDiceValue()
+//        controller.secondValue = self.randomDiceValue()
+//        self.present(controller, animated: true, completion: nil)
     }
     
     
